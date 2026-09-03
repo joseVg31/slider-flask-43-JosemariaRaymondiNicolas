@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block titulo %}Mi Slider{% endblock %}
+
+{% block contenido %}
+<div class="w-full max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold text-center mb-4">Mi Slider</h1>
+
+    <div class="relative overflow-hidden rounded-xl shadow-lg" id="slider-container">
+        <div class="flex transition-transform duration-500 ease-in-out" id="track">
+            <img src="{{ url_for('static', filename='img/imagen01.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 1">
+            <img src="{{ url_for('static', filename='img/imagen02.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 2">
+            <img src="{{ url_for('static', filename='img/imagen03.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 3">
+            <img src="{{ url_for('static', filename='img/imagen04.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 4">
+            <img src="{{ url_for('static', filename='img/imagen05.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 5">
+            <img src="{{ url_for('static', filename='img/imagen06.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 6">
+            <img src="{{ url_for('static', filename='img/imagen07.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 7">
+            <img src="{{ url_for('static', filename='img/imagen08.jpg') }}" class="w-full flex-shrink-0 h-80 object-cover" alt="Imagen 8">
+        </div>
+
+        <button id="prev" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-9 h-9 rounded-full">&#10094;</button>
+        <button id="next" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-9 h-9 rounded-full">&#10095;</button>
+
+        <div class="absolute bottom-0 left-0 h-1 bg-emerald-400" id="progress"></div>
+    </div>
+
+    <div class="flex justify-center gap-2 mt-3" id="dots"></div>
+</div>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css') }}">
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+{% endblock %}
